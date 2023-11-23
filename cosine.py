@@ -4,18 +4,12 @@ import sys
 
 # sentences in the database
 db_sentences = [
-    "turn on living room lamp",
-    "turn off living room lamp",
-    "turn on fan",
-    "turn off fan",
-    "open door",
-    "close door",
-    "turn on bedroom room lamp",
-    "turn off bedroom room lamp",
+    "nyalakan kipas angin",
+    "matikan kipas angin",
+    "buka pintu",
+    "tutup pintu",
     "nyalakan lampu kamar tidur",
     "matikan lampu kamar tidur",
-    "nyalakan lampu kamar mandi",
-    "matikan lampu kamar mandi"
 ]
 
 # input sentence

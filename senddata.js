@@ -1,8 +1,8 @@
 const { initializeApp } = require('firebase/app')
 const config = require('./config');
 
-const db = initializeApp(config.firebaseConfig);
+// const db = initializeApp(config.firebaseConfig);
+const database = getDatabase(firebaseApp);
+const {firebaseConfig} = require('./config');
 
-module.exports = db;
-
-firebaseDB.ref("P1").set("1")
+database.ref("P1").set("1")

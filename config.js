@@ -1,7 +1,8 @@
-const firebase = require('firebase');
 
+const { initializeApp } = require('firebase/app');
+const { getDatabase, ref, set } = require('firebase/database');
 
-// Initialize Firebase with your web app's Firebase configuration
+// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBxfaRILvmexo-W9KuzciuJ3FxWHnwUK94",
   authDomain: "smarthometa-5dabc.firebaseapp.com",
@@ -13,11 +14,20 @@ const firebaseConfig = {
   measurementId: "G-HTD086RJMN"
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
+const database = getDatabase(firebaseApp);
+const firebaseRef = ref(database, 'STATUS_LAMPU');
 
-// Get a reference to the database
-const database = firebase.database();
-// firebaseDB.ref("P1").set("1")
+// Data yang akan disimpan
+const newData = {
+ value : 1
+};
 
-
-
+// Simpan data ke Firebase
+set(firebaseRef, newData)
+  .then(() => {
+    console.log('Data berhasil disimpan di Firebase.');
+  })
+  .catch((error) => {
+    console.error('Error menyimpan data:', error);
+  });
