@@ -8,8 +8,8 @@ db_sentences = [
     "matikan kipas angin",
     "buka pintu",
     "tutup pintu",
-    "nyalakan lampu kamar tidur",
-    "matikan lampu kamar tidur",
+    "nyalakan lampu ",
+    "matikan lampu ",
 ]
 
 # input sentence

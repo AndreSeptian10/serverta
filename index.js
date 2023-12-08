@@ -32,7 +32,7 @@ app.post('/voice', (req, res) => {
   const voiceData = req.body.voice_data;
   
   // Lakukan sesuatu dengan voiceData
-  console.log('Voice Data:', voiceData);
+  console.log('Perintah dari user:', voiceData);
 
   // Jalankan skrip Python dengan nilai voiceData sebagai input
   const process = spawn('python', ['./cosine.py', voiceData]);
@@ -50,15 +50,15 @@ app.post('/voice', (req, res) => {
   });
 
   process.on('close', (code) => {
-    console.log('Output command:', outputDatasuara);
+    console.log('Hasil text Processing:', outputDatasuara);
 
     let tmp = slug(outputDatasuara, '_');
 
     switch (tmp) {
-      case "matikan_lampu_kamar_tidur":
+      case "matikan_lampu":
         newValue = 0;
         break;
-      case "nyalakan_lampu_kamar_tidur":
+      case "nyalakan_lampu":
         newValue = 1;
         break;
       case "matikan_kipas_angin":
